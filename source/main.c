@@ -4,16 +4,11 @@
  */
 
 #include "main.h"
-#include "../libraries/tree/tree.h"
+#include "../macros/macros.h"
+#include "../libraries/file/file.h"
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#if defined POSIX
-#define CLEARSCR system ( "clear" )
-#elif defined MSDOS || defined WIN32
-#define CLEARSCR system ( "cls" )
-#endif
 
 int main(int argc, char **argv) {
 	if (argc % 2) {
@@ -26,8 +21,10 @@ int main(int argc, char **argv) {
 	unsigned int op;
 	do {
 		op = menu();
+		CLEARSCR;
 		switch (op) {
 		case 1:
+			insert_node_tree(tree, new_node(new_person()));
 			break;
 		case 2:
 			break;
@@ -35,15 +32,18 @@ int main(int argc, char **argv) {
 			break;
 		case 4:
 			print_tree_ascending_order(tree);
+			PAUSE;
 			break;
 		case 5:
 			print_tree_descending_order(tree);
+			PAUSE;
 			break;
 		case 6:
 			break;
 		case 7:
 			break;
 		case 8:
+			import_file(tree, argv[1]);
 			break;
 		case 9:
 			break;
@@ -67,6 +67,6 @@ int menu() {
 	printf("\n(0) Exit");
 	printf("\n\nOption: ");
 	unsigned int op;
-	scanf("%d", &op);
+	scanf("%u", &op);
 	return op;
 }

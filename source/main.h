@@ -6,6 +6,8 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include "../libraries/tree/tree.h"
+
 /*
  *@brief: main prgm loop
  *@return: != 0 error exit.
