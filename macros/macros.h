@@ -10,13 +10,9 @@
 
 #if defined POSIX
 #define CLEARSCR system ( "clear" )
-#elif defined MSDOS || defined WIN32
-#define CLEARSCR system ( "cls" )
-#endif
-
-#if defined POSIX
 #define PAUSE printf("\n");system ( "read -rsp $'Press any key to continue...\n' -n 1 key" )
 #elif defined MSDOS || defined WIN32
+#define CLEARSCR system ( "cls" )
 #define PAUSE printf("\n");system ( "pause" )
 #endif
 
