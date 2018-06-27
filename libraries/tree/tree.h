@@ -13,4 +13,12 @@ struct tree {
 	struct person_node *root;
 };
 
+struct tree *new_tree();
+
+void destruct_tree(struct tree *tree);
+
+void print_tree_ascending_order(struct tree *tree);
+
+void print_tree_descending_order(struct tree *tree);
+
 #endif /* LIBRARIES_TREE_TREE_H_ */
