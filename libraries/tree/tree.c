@@ -26,3 +26,14 @@ void print_tree_descending_order(struct tree *tree) {
 		print_nodes_descending_order(tree->root);
 	}
 }
+
+void insert_node_tree(struct tree *tree, struct person_node *node) {
+	if (tree && node) {
+		if (tree->root) {
+			insert_node(tree->root, node);
+		} else {
+			tree->root = node;
+		}
+		tree->n_nodes++;
+	}
+}
