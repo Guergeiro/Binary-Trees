@@ -4,6 +4,7 @@
  */
 
 #include "main.h"
+#include "../libraries/tree/tree.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,10 +18,11 @@
 int main(int argc, char **argv) {
 	if (argc % 2) {
 		CLEARSCR;
-		printf("\n%s\t<file>", argv[0]);
+		printf("\n%s <file>", argv[0]);
 		exit(1);
 	}
 
+	struct tree *tree = new_tree();
 	unsigned int op;
 	do {
 		op = menu();
@@ -32,15 +34,23 @@ int main(int argc, char **argv) {
 		case 3:
 			break;
 		case 4:
+			print_tree_ascending_order(tree);
 			break;
 		case 5:
+			print_tree_descending_order(tree);
 			break;
 		case 6:
 			break;
 		case 7:
 			break;
+		case 8:
+			break;
+		case 9:
+			break;
 		}
 	} while(op != 0);
+
+	destruct_tree(tree);
 }
 
 int menu() {
