@@ -17,7 +17,9 @@ struct person_node {
 	struct person_node *right;
 };
 
-struct person_node *new_node();
+struct person *new_person();
+
+struct person_node *new_node(struct person *data);
 
 void destruct_person_node(struct person_node *node);
 
@@ -26,5 +28,9 @@ void print_person(struct person *data);
 void print_nodes_ascending_order(struct person_node *node);
 
 void print_nodes_descending_order(struct person_node *node);
+
+void insert_node(struct person_node *current, struct person_node *node);
+
+int compare_nodes(struct person_node *node1, struct person_node *node2);
 
 #endif /* LIBRARIES_PERSON_PERSON_H_ */
