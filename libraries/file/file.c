@@ -5,7 +5,7 @@
 
 #include "file.h"
 #include "../person/person.h"
-#include "../../macros/macros.h"
+#include "../macros/macros.h"
 
 #include <string.h>
 
