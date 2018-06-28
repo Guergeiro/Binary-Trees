@@ -45,10 +45,10 @@ void export_file(struct tree *tree) {
 
 void export_nodes_ascending_order(struct person_node *node, FILE *file) {
 	if (node->left) {
-		print_nodes_ascending_order(node->left);
+		export_nodes_ascending_order(node->left, file);
 	}
 	fprintf(file, "%u\t%s", node->data->age, node->data->name);
 	if (node->right) {
-		print_nodes_ascending_order(node->right);
+		export_nodes_ascending_order(node->right, file);
 	}
 }
