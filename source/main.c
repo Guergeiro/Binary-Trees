@@ -27,28 +27,35 @@ int main(int argc, char **argv) {
 			insert_node_tree(tree, new_node(new_person()));
 			break;
 		case 2:
+			search_tree_node(tree, new_node(new_person()));
 			break;
 		case 3:
-			break;
-		case 4:
 			print_tree_ascending_order(tree);
 			PAUSE;
 			break;
-		case 5:
+		case 4:
 			print_tree_descending_order(tree);
 			PAUSE;
 			break;
+		case 5:
+			printf("\nNumber of nodes: %u", number_of_nodes(tree));
+			PAUSE;
+			break;
 		case 6:
+			invert_tree(tree);
 			break;
 		case 7:
+			printf("\nTree height: %u", tree_height(tree));
+			PAUSE;
 			break;
 		case 8:
 			import_file(tree, argv[1]);
 			break;
 		case 9:
+			export_file(tree);
 			break;
 		}
-	} while(op != 0);
+	} while (op != 0);
 
 	destruct_tree(tree);
 }
@@ -56,11 +63,11 @@ int main(int argc, char **argv) {
 int menu() {
 	CLEARSCR;
 	printf("\n(1) Insert new node");
-	printf("\n(2) Remove a node");
-	printf("\n(3) Search a node");
-	printf("\n(4) Print all nodes (ascending order)");
-	printf("\n(5) Print all nodes (descending order)");
-	printf("\n(6) Number of nodes");
+	printf("\n(2) Search a node");
+	printf("\n(3) Print all nodes (ascending order)");
+	printf("\n(4) Print all nodes (descending order)");
+	printf("\n(5) Number of nodes");
+	printf("\n(6) Invert tree");
 	printf("\n(7) Tree height");
 	printf("\n(8) Import file");
 	printf("\n(9) Export .txt file");
