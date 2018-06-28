@@ -13,4 +13,4 @@ Simple C program that separates people on a file based on age.
 
 Note: This program has no GUI. It is build to be used via command prompt / terminal
 
-* Project by Breno Salles *
+# *Project by Breno Salles*
