@@ -1,9 +1,9 @@
 # Binary-Trees
-Simple C program that separates people on a file based on age.
+Simple C program that separates people on a file based on age
 
 ### Prerequisites
 - Needs gcc C99 compiler or higher
-- A file (optional) with fields only separated by commas, and where the age is the 1st field, and the name the 2nd.
+- A file (optional) with fields only separated by commas, and where the age is the 1st field, and the name the 2nd
 
 ### How to use
 - Open up command prompt / terminal
