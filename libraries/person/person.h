@@ -33,7 +33,11 @@ void print_nodes_descending_order(struct person_node *node);
 
 void insert_node(struct person_node *current, struct person_node *node);
 
-void my_insert_node(struct person_node *current, struct person_node *node);
+void invert_node(struct person_node *node);
+
+struct person_node *search_node(struct person_node *current, struct person_node *node);
+
+unsigned int max_node(struct person_node *node);
 
 int compare_nodes(struct person_node *node1, struct person_node *node2);
 
