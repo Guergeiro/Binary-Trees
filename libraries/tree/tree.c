@@ -13,7 +13,12 @@ struct tree *new_tree() {
 }
 
 void destruct_tree(struct tree *tree) {
-	free(tree);
+	if (tree) {
+		if (tree->root) {
+			destruct_all_nodes(tree->root);
+		}
+		free(tree);
+	}
 }
 
 void print_tree_ascending_order(struct tree *tree) {
