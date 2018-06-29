@@ -17,7 +17,7 @@ struct person *new_person() {
 	scanf("%u", &new_person->age);
 	printf("\nName: ");
 	char aux[BUFFER];
-	//while ((getchar()) != '\n');
+	while ((getchar()) != '\n');
 	//scanf("%[^\n]s", aux);
 	fgets(aux, BUFFER, stdin);
 	new_person->name = malloc(strlen(aux) * sizeof(char));
@@ -79,17 +79,15 @@ void insert_node(struct person_node *current, struct person_node *node) {
 }
 
 void my_insert_node(struct person_node *current, struct person_node *node) {
-	while (current){
-		if (compare_nodes(current, node) > 0)
-			current = current->left;
-		else if (compare_nodes(current, node) < 0)
-			current = current->right;
+	struct person_node **temp;
+	temp = &current;
+	while (*temp){
+		if (compare_nodes(*temp, node) > 0)
+			temp = &((*temp)->left);
 		else
-		{
-			return;
-		}
+			temp = &((*temp)->right);
 	}
-	current->data = current;
+	*temp = node;
 }
 
 int compare_nodes(struct person_node *node1, struct person_node *node2) {
