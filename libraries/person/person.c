@@ -72,19 +72,15 @@ void print_nodes_descending_order(struct person_node *node) {
 }
 
 void insert_node(struct person_node *current, struct person_node *node) {
-	if (compare_nodes(current, node) > 0) {
-		if (current->left) {
-			insert_node(current->left, node);
-		} else {
-			current->left = node;
-		}
-	} else {
-		if (current->right) {
-			insert_node(current->right, node);
-		} else {
-			current->right = node;
-		}
+	struct person_node **temp;
+	temp = &current;
+	while (*temp){
+		if (compare_nodes(*temp, node) > 0)
+			temp = &((*temp)->left);
+		else
+			temp = &((*temp)->right);
 	}
+	*temp = node;
 }
 
 void invert_node(struct person_node *node) {
