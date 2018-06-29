@@ -38,6 +38,16 @@ void destruct_person_node(struct person_node *node) {
 	free(node);
 }
 
+void destruct_all_nodes(struct person_node *node) {
+	if (node->left) {
+		destruct_all_nodes(node->left);
+	}
+	if (node->right) {
+		destruct_all_nodes(node->right);
+	}
+	destruct_person_node(node);
+}
+
 void print_person(struct person *data) {
 	printf("\nAge: %u\tName: %s", data->age, data->name);
 }
